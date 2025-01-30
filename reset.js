@@ -19,8 +19,9 @@ const initializeGit = () => {
   try {
     console.log("Initializing new Git repository...");
     execSync("git init");
-    execSync("git add .");
-    execSync('git commit -m "Initial commit"');
+    execSync("git add ."); // 모든 파일 스테이징
+    execSync("git reset reset.js"); // reset.js 파일을 스테이징에서 제외
+    execSync('git commit -m "Initial commit"'); // reset.js 파일 없이 커밋
     console.log("Git repository initialized and initial commit created.");
   } catch (error) {
     console.error("Error initializing Git repository:", error.message);
