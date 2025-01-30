@@ -4,7 +4,7 @@ import { execSync } from "child_process";
 
 // .git 폴더 삭제
 const deleteGitFolder = () => {
-  const gitFolderPath = path.join(__dirname, ".git");
+  const gitFolderPath = path.join(process.cwd(), ".git");
   if (fs.existsSync(gitFolderPath)) {
     console.log("Deleting .git folder...");
     fs.rmSync(gitFolderPath, { recursive: true, force: true });
@@ -29,7 +29,7 @@ const initializeGit = () => {
 
 // reset.js 파일 삭제
 const deleteResetFile = () => {
-  const resetFilePath = path.join(__dirname, "reset.js");
+  const resetFilePath = path.join(process.cwd(), "reset.js");
   if (fs.existsSync(resetFilePath)) {
     console.log("Deleting reset.js file...");
     fs.unlinkSync(resetFilePath);
