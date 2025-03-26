@@ -14,22 +14,26 @@ git clone https://github.com/Hun3431/react-starter-kit.git
 cd react-starter-kit
 ```
 
-### 2. 깃 초기화
+### 2. 프로젝트 설정
 
-기존 Git 기록을 삭제하고 새로운 Git 저장소를 초기화 합니다.
+index.html, package.json 에서의 이름을 수정합니다.
 
-``` bash
+### 3. 초기화
+
+프로젝트를 초기화 합니다.
+
+```bash
 node reset.js
 ```
 
-### 3. 의존성 설치
+### 4. 의존성 설치
 
 ```bash
-npm install
+pnpm install
 ```
 
-### 3. 개발 서버 실행
+### 5. 개발 서버 실행
 
 ```bash
-npm run dev
+pnpm run dev
 ```
