@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainPage from "./pages/main";
-import NotFoundPage from "./pages/notfound";
+import MainPage from "./pages/main/page";
+import NotFoundPage from "./pages/notfound/page";
 import MobileLayout from "./layout/mobileWeb/layout";
 
 const Router = () => {
