@@ -5,7 +5,7 @@ const NotFoundPage = () => {
   const navigate = useNavigate();
 
   const handleBackToHome = () => {
-    navigate("/");
+    navigate("/", { replace: true });
   };
   return (
     <div
