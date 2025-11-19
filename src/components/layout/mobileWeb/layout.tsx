@@ -1,38 +1,20 @@
-import React from "react";
-import LeftScreenContents from "./leftScreenContents";
-import RightScreenContents from "./rightScreenContents";
+import { cn } from "cn-func";
+import { Outlet } from "react-router-dom";
 
-interface props {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: props) => {
+const MobileLayout = () => {
   return (
-    <div
-      className="relative grid sm:grid-cols-3 sm:grid-cols-[1fr_450px_1fr] w-full min-h-dvh h-auto m-0"
-      style={{ scrollbarGutter: "stable" }}
-      // style={{ minHeight: "100dvh" }}
-    >
-      {/* Left Screen */}
+    <div className="min-h-screen w-full bg-gray-50 flex justify-center overflow-hidden">
       <div
-        className="sm:col-start-1 sm:flex hidden fixed left-0 top-0 h-full items-center justify-end pr-[100px] border-r"
-        style={{ width: "calc(50vw - 225px)" }}
+        className={cn(
+          "relative overflow-y-scroll",
+          "w-full h-[100dvh] sm:w-[430px] sm:max-w-full bg-white",
+          "outline outline-offset-1 outline-gray-200"
+        )}
       >
-        <LeftScreenContents />
-      </div>
-      {/* Mobile Screen */}
-      <div className="sm:col-start-2 sm:w-[450px] w-full h-full bg-white">
-        {children}
-      </div>
-      {/* Right Screen */}
-      <div
-        className="sm:col-end-1 sm:flex hidden fixed right-0 top-0 h-full items-center justify-start pl-[100px] border-l"
-        style={{ width: "calc(50vw - 225px)" }}
-      >
-        <RightScreenContents />
+        <Outlet />
       </div>
     </div>
   );
 };
 
-export default Layout;
+export default MobileLayout;
